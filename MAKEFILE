@@ -1,0 +1,11 @@
+game_of_life.exe: life.o lifefunc.o
+    gcc life.o lifefunc.o -o game_of_life.exe -lncursesw
+
+life.o: life.c life.h
+    gcc life.c -c -lncursesw
+
+lifefunc.o: lifefunc.c life.h
+    gcc lifefunc.c -c -lncursesw
+
+clean
+    del life.o lifefunc.o
